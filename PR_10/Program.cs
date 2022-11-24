@@ -41,17 +41,17 @@ namespace PR_10
                 }
                 //3.Вывод массива на экран
                 Console.WriteLine("Исходный массив");
+                
                 for (i = 0; i < m; i++)
                 {
                     for (j = 0; j < n; j++)
-                    {
-
-                        Console.Write(mas[i, j] + " ");
+                    {                        
+                        Console.Write(String.Format("{0,3}", mas[i, j]));
                     }
                     Console.Write("\n");
 
                 }
-                Console.WriteLine("");
+                Console.WriteLine(" ");
                 int buffer;
                 int buffer2;
                 Console.WriteLine("измененный массив");
@@ -68,10 +68,17 @@ namespace PR_10
                     {
                         for (j = 0; j < n; j++)
                         {
-
-                            
-                            Console.Write(mas[i, j] + " ");
-                            
+                            if (j == 1 || j == 0)
+                            {
+                                Console.BackgroundColor = ConsoleColor.Green;
+                                Console.Write(String.Format("{0,3}", mas[i, j]));
+                                Console.ResetColor();
+                            }
+                            else
+                            {
+                                Console.Write(String.Format("{0,3}", mas[i, j]));
+                            }
+                            Console.Write(" ");
                         }
                         Console.Write("\n");
                     }
@@ -94,9 +101,17 @@ namespace PR_10
                     {
                         for (j = 0; j < n; j++)
                         {
-
-
-                            Console.Write(mas[i, j] + " ");
+                            if (j == 1 || j == 2)
+                            {
+                                Console.BackgroundColor = ConsoleColor.Green;
+                                Console.Write(String.Format("{0,3}", mas[i, j]));
+                                Console.ResetColor();
+                            }                            
+                            else
+                            {
+                                Console.Write(String.Format("{0,3}", mas[i, j]));
+                            }
+                            Console.Write(" ");
                         }
                         Console.Write("\n");
                     }
